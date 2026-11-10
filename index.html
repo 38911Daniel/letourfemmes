@@ -30,10 +30,75 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 8%;
-            transition height: 0.4s;
-            z-index: 10px;
+            transition: height 0.4s;
+            z-index: 10;
         }
-        
+
+
+        nav.pequena{
+            height: 55px;
+        }
+
+        nav a{
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .logo{
+            font-weight: bold;
+            color: #c8e477;
+        }
+
+        .hero{
+            height: 100vh;
+            background: linear-gradient(135deg, #d6e69e, #ffff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .hero h1{
+            font-size: clamp(36px, 7vw, 80px);
+            margin-bottom: 10px;
+        }
+
+        .hero p{
+            font-size: 22px;
+        }
+
+        section{
+            padding: 80px 8%;
+        }
+
+        h2{
+            font-size: 32px;
+        }
+
+        .tabela-scroll{
+            overflow-x: auto;
+        }
+
+        table{
+            width: 100%;
+            background: #fff;
+            border-collapse: collapse;
+        }
+
+        th{
+            background: #8bae22;
+            color: #fff;
+        }
+
+        td, th{
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+
+        }
+
     </style>
 </head>
 <body>
@@ -67,6 +132,20 @@
                         <th>Tempo</th>
                     </tr>
                 </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </section>
@@ -81,13 +160,14 @@
         //aqui vem o java script
         const navBar = document.getElementById('navBar');
 
-        window.addEventListener('scroll'), () => {
+        window.addEventListener('scroll', () => {
             if(window.scrollY > 50) {
-                console.log("Fora do topo")
-            } else{
-                console.log("No topo")
+                navBar.classList.add("pequena")
+            } 
+            else{
+                navBar.classList.remove("pequena")
             }
-        }
+        })
     </script>
 </body>
 </html>
